@@ -1,4 +1,4 @@
-import {checkUser} from '@lib/checkUser' 
+import { checkUser } from "@/lib/checkUser"
 
 export default function Navbar() {
     const user= checkUser();
