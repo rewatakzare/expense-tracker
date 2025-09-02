@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user{
+model User{
   id  String @id @default(uuid())
   clerkUserid String @unique
   email String @unique
@@ -30,8 +30,8 @@ model Records {
   amount Float
   category String @default("Other")
   date DateTime @default(now())
-  userid String
-  user user @relation(fields: [userid] ,references: [clerkUserid] , onDelete: Cascade)
+  userId String
+  user User @relation(fields: [userId] ,references: [clerkUserid] , onDelete: Cascade)
   created_at DateTime @default(now())
-  @@index([userid])
+  @@index([userId])
 }
